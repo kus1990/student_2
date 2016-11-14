@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.ulmart.ru/" />
+<title>карточка товара может быть открыта из результатов поиска</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">карточка товара может быть открыта из результатов поиска</td></tr>
+</thead><tbody>
+<!--шаг 1-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--проверка наличия строки поиска-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=searchField</td>
+	<td></td>
+</tr>
+<!--проверка наличия боковой панели-->
+<!--ВОПРОС-1 :  как для боковой панели записать XPath?-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.b-dropdown__body__h &gt; div.b-dropdown__body__h</td>
+	<td></td>
+</tr>
+<!--шаг 2-->
+<!--переход в раздел "Спорт и Туримзм"-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() = &quot;Спорт и Туризм&quot;]</td>
+	<td></td>
+</tr>
+<!--проверка заголовка-->
+<tr>
+	<td>verifyText</td>
+	<td>//h1[text() = &quot;Спорт и Туризм&quot;]</td>
+	<td>Спорт и Туризм</td>
+</tr>
+<!--ВОПРОС-2 : как проверить текущий URL?-->
+<!--шаг 3-->
+<!--переход в подраздел "Зимний спорт"-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() =&quot;Зимний спорт&quot;]</td>
+	<td></td>
+</tr>
+<!--проверка наличия ссылки с текстом "Горнолыжный спорт"-->
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() = &quot;Горнолыжный спорт&quot;]</td>
+	<td>Горнолыжный спорт</td>
+</tr>
+<!--шаг 4-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() = &quot;Горнолыжный спорт&quot;]</td>
+	<td></td>
+</tr>
+<!--проверка заголовка страницы - Горные лыжи-->
+<tr>
+	<td>assertText</td>
+	<td>//h1[text() = &quot; Горные лыжи&quot;]</td>
+	<td>Горные лыжи</td>
+</tr>
+<!--проверка наличия списка карточек с товарами-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@class = &quot;col-main-section b-products&quot;]</td>
+	<td></td>
+</tr>
+<!--шаг 5-->
+<!--ВОПРОС-3 : как тут написать XPath, чтобы именно первая карточка была?-->
+<!--ВОПРОС-4 : почему даже по такой ссылке Selenium выдает ошибку?-->
+<tr>
+	<td>clickAndWait</td>
+	<td>.//*[@id='linkText3633770']</td>
+	<td></td>
+</tr>
+<!--проверка наличия в наименовании товара "Горные лыжи"-->
+<!--ВОПРОС-5 : как проверить, что строка содержит текст?-->
+<tr>
+	<td>verifyText</td>
+	<td>//h1[@class = &quot;main-h1 main-h1_bold js-reload&quot;]</td>
+	<td>Горные лыжи *</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
