@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.ulmart.ru/" />
+<title>покупка товара через результаты поиска</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">покупка товара через результаты поиска</td></tr>
+</thead><tbody>
+<!--шаг 1-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--проверка наличия поисковой строки-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=searchField</td>
+	<td></td>
+</tr>
+<!--проверка наличия боковой панели-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.b-dropdown__body__h &gt; div.b-dropdown__body__h</td>
+	<td></td>
+</tr>
+<!--шаг 2-->
+<!--переход в раздел Спорт и Туризм-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() = &quot;Спорт и Туризм&quot;]</td>
+	<td></td>
+</tr>
+<!--проверка заголовка-->
+<tr>
+	<td>verifyText</td>
+	<td>//h1[text() = &quot;Спорт и Туризм&quot;]</td>
+	<td>Спорт и Туризм</td>
+</tr>
+<!--шаг 3-->
+<!--переход во все категории тренажеров (не знаю как тут по другому указать путь)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=/html/body/div[1]/div/div/div/div[2]/div/div/section[1]/div/div[1]/ul/li[7]/a</td>
+	<td></td>
+</tr>
+<!--проверка заголовка-->
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() =&quot;Велотренажеры&quot;]</td>
+	<td>Велотренажеры</td>
+</tr>
+<!--проверка трех-элемнтов ссылок в разделе велотренажеры (а можно как то проверить именно тот факт, что они в нужном разделе находятся?)-->
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() = &quot;Портативные&quot;]</td>
+	<td>Портативные</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() = &quot;Вертикальные&quot;]</td>
+	<td>Вертикальные</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() = &quot;Горизонтальные&quot;]</td>
+	<td>Горизонтальные</td>
+</tr>
+<!--шаг 4-->
+<!--переход в Вертикальные-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() = &quot;Вертикальные&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//h1[text() = &quot; Вертикальные&quot;]</td>
+	<td>Вертикальные</td>
+</tr>
+<!--проверка наличия карточек товаров-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@class = &quot;col-main-section b-products&quot;]</td>
+	<td></td>
+</tr>
+<!--шаг 5-->
+<!--переход по первой карточке товара-->
+<!--я не понял как это запрос составляется и просто скопировал его из прошлого теста. не знаю правильно или нет-->
+<tr>
+	<td>storeEval</td>
+	<td>window.document.getElementsByClassName('b-product__center')[0].getElementsByTagName(&quot;a&quot;)[0].click()</td>
+	<td>firstCard</td>
+</tr>
+<!--а дальше firefox снова блокирует вспл окна...-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@class='b-product__descr']</td>
+	<td>Велотренажер *</td>
+</tr>
+<!--проверка наличия кнопки купить-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
+	<td>Купить</td>
+</tr>
+<!---->
+
+</tbody></table>
+</body>
+</html>
