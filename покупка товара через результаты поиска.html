@@ -90,18 +90,17 @@
 	<td></td>
 </tr>
 <!--шаг 5-->
-<!--переход по первой карточке товара-->
-<!--я не понял как это запрос составляется и просто скопировал его из прошлого теста. не знаю правильно или нет-->
-<tr>
-	<td>storeEval</td>
-	<td>window.document.getElementsByClassName('b-product__center')[0].getElementsByTagName(&quot;a&quot;)[0].click()</td>
-	<td>firstCard</td>
-</tr>
-<!--а дальше firefox снова блокирует вспл окна...-->
+<!--проверка имени первой карточки-->
 <tr>
 	<td>verifyText</td>
-	<td>//div[@class='b-product__descr']</td>
-	<td>Велотренажер *</td>
+	<td>//div[@class = &quot;b-product__descr&quot;][1]</td>
+	<td>Велотренажер Bradex, СПЛЭШ</td>
+</tr>
+<!--проверка артикула первой карточки (я понимаю, что возможно это не совсес правильно, но как по другому сделать не могу придумать)-->
+<tr>
+	<td>verifyText</td>
+	<td>//span[text()&nbsp;&nbsp;= &quot;3419267&quot;]</td>
+	<td>3419267</td>
 </tr>
 <!--проверка наличия кнопки купить-->
 <tr>
@@ -109,13 +108,101 @@
 	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
 	<td></td>
 </tr>
+<!--шаг 6 -->
+<!--переход по кнопке купить-->
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
+	<td></td>
+</tr>
+<!--проверка заголовка-->
 <tr>
 	<td>verifyText</td>
-	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
-	<td>Купить</td>
+	<td>//h1</td>
+	<td>Товар добавлен в корзину!</td>
 </tr>
+<!--проверка наличия кнопки перейти в корзину-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//span[text() = &quot;Перейти в корзину&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//span[text() = &quot;Перейти в корзину&quot;]</td>
+	<td>Перейти в корзину</td>
+</tr>
+<!--шаг 7-->
+<!--Переход в корзину-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//span[text() = &quot;Перейти в корзину&quot;]</td>
+	<td></td>
+</tr>
+<!--проверка заголовка-->
+<tr>
+	<td>verifyText</td>
+	<td>//h1</td>
+	<td>Ваша корзина</td>
+</tr>
+<!--проверка количества товаров в корзине-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@class = &quot;count goodsabbr&quot;]</td>
+	<td>1 шт.</td>
+</tr>
+<!--проверка назнавиния товара-->
+<tr>
+	<td>verifyText</td>
+	<td>//strong[text() = &quot;Велотренажер Bradex, СПЛЭШ&quot;]</td>
+	<td>Велотренажер Bradex, СПЛЭШ</td>
+</tr>
+<!--проверка артикула-->
+<tr>
+	<td>verifyText</td>
+	<td>//span[@class = &quot;sku&quot;]</td>
+	<td>*3419267</td>
+</tr>
+<!--Проверка наличия кнопки очистить корзину-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//button[@class = &quot;gray small narrow clear doClearCart&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//button[@class = &quot;gray small narrow clear doClearCart&quot;]</td>
+	<td>Очистить корзину</td>
+</tr>
+<!--шаг 8-->
+<!--нажать на кнопку очистить корзину-->
 <!---->
-
+<tr>
+	<td>click</td>
+	<td>//button[@class = &quot;gray small narrow clear doClearCart&quot;]</td>
+	<td></td>
+</tr>
+<!--алерты-->
+<tr>
+	<td>assertConfirmation</td>
+	<td>Вы уверены, что хотите очистить корзину?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Ошибка, пожалуйста попробуйте еще раз.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.cart-container.fix &gt; section.newcart &gt; div.cart-container.fix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@class = &quot;emptyCart&quot;]//p</td>
+	<td>Ваша корзина пуста*</td>
+</tr>
 </tbody></table>
 </body>
 </html>
