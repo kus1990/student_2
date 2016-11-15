@@ -26,9 +26,10 @@
 <!--ВОПРОС-1 :  как для боковой панели записать XPath?-->
 <!--ОТВЕТ: Можно попробовать так (//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]
  или (//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]/a -->
+<!--попробовал оба варианта - не проходит проверку((-->
 <tr>
 	<td>verifyElementPresent</td>
-	<td>css=div.b-dropdown__body__h &gt; div.b-dropdown__body__h</td>
+	<td>&nbsp;&nbsp;(//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]/a </td>
 	<td></td>
 </tr>
 <!--шаг 2-->
@@ -71,7 +72,7 @@ WebDriver driver = new FirefoxDriver(); есть возможность полу
 </tr>
 <!--проверка заголовка страницы - Горные лыжи-->
 <tr>
-	<td>assertText</td>
+	<td>verifyText</td>
 	<td>//h1[text() = &quot; Горные лыжи&quot;]</td>
 	<td>Горные лыжи</td>
 </tr>
