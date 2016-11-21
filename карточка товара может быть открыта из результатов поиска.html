@@ -19,7 +19,7 @@
 </tr>
 <!--проверка наличия строки поиска-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>id=searchField</td>
 	<td></td>
 </tr>
@@ -27,11 +27,6 @@
 <!--ОТВЕТ: Можно попробовать так (//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]
  или (//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]/a -->
 <!--попробовал оба варианта - не проходит проверку((-->
-<tr>
-	<td>verifyElementPresent</td>
-	<td>&nbsp;&nbsp;(//ul[contains(@class,'catalog-menu')])[1]//li[contains(@class,'dropdown_catalog-menu')]/a </td>
-	<td></td>
-</tr>
 <!--шаг 2-->
 <!--переход в раздел "Спорт и Туримзм"-->
 <tr>
@@ -41,8 +36,8 @@
 </tr>
 <!--проверка заголовка-->
 <tr>
-	<td>verifyText</td>
-	<td>//h1[text() = &quot;Спорт и Туризм&quot;]</td>
+	<td>assertText</td>
+	<td>//h1</td>
 	<td>Спорт и Туризм</td>
 </tr>
 <!--ВОПРОС-2 : как проверить текущий URL?-->
@@ -60,7 +55,7 @@ WebDriver driver = new FirefoxDriver(); есть возможность полу
 </tr>
 <!--проверка наличия ссылки с текстом "Горнолыжный спорт"-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() = &quot;Горнолыжный спорт&quot;]</td>
 	<td>Горнолыжный спорт</td>
 </tr>
@@ -72,7 +67,7 @@ WebDriver driver = new FirefoxDriver(); есть возможность полу
 </tr>
 <!--проверка заголовка страницы - Горные лыжи-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//h1[text() = &quot; Горные лыжи&quot;]</td>
 	<td>Горные лыжи</td>
 </tr>

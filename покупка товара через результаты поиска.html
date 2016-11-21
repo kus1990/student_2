@@ -19,7 +19,7 @@
 </tr>
 <!--проверка наличия поисковой строки-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>id=searchField</td>
 	<td></td>
 </tr>
@@ -38,7 +38,7 @@
 </tr>
 <!--проверка заголовка-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//h1[text() = &quot;Спорт и Туризм&quot;]</td>
 	<td>Спорт и Туризм</td>
 </tr>
@@ -51,23 +51,23 @@
 </tr>
 <!--проверка заголовка-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() =&quot;Велотренажеры&quot;]</td>
 	<td>Велотренажеры</td>
 </tr>
 <!--проверка трех-элемнтов ссылок в разделе велотренажеры (а можно как то проверить именно тот факт, что они в нужном разделе находятся?)-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() = &quot;Портативные&quot;]</td>
 	<td>Портативные</td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() = &quot;Вертикальные&quot;]</td>
 	<td>Вертикальные</td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() = &quot;Горизонтальные&quot;]</td>
 	<td>Горизонтальные</td>
 </tr>
@@ -79,32 +79,32 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//h1[text() = &quot; Вертикальные&quot;]</td>
 	<td>Вертикальные</td>
 </tr>
 <!--проверка наличия карточек товаров-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>//div[@class = &quot;col-main-section b-products&quot;]</td>
 	<td></td>
 </tr>
 <!--шаг 5-->
 <!--проверка имени первой карточки-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//div[@class = &quot;b-product__descr&quot;][1]</td>
 	<td>Велотренажер Bradex, СПЛЭШ</td>
 </tr>
 <!--проверка артикула первой карточки (я понимаю, что возможно это не совсес правильно, но как по другому сделать не могу придумать)-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text()&nbsp;&nbsp;= &quot;3419267&quot;]</td>
 	<td>3419267</td>
 </tr>
 <!--проверка наличия кнопки купить-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>xpath=(//a[contains(text(),'Купить')])[18]</td>
 	<td></td>
 </tr>
@@ -117,18 +117,18 @@
 </tr>
 <!--проверка заголовка-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//h1</td>
 	<td>Товар добавлен в корзину!</td>
 </tr>
 <!--проверка наличия кнопки перейти в корзину-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>//span[text() = &quot;Перейти в корзину&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[text() = &quot;Перейти в корзину&quot;]</td>
 	<td>Перейти в корзину</td>
 </tr>
@@ -141,36 +141,36 @@
 </tr>
 <!--проверка заголовка-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//h1</td>
 	<td>Ваша корзина</td>
 </tr>
 <!--проверка количества товаров в корзине-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//div[@class = &quot;count goodsabbr&quot;]</td>
 	<td>1 шт.</td>
 </tr>
 <!--проверка назнавиния товара-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//strong[text() = &quot;Велотренажер Bradex, СПЛЭШ&quot;]</td>
 	<td>Велотренажер Bradex, СПЛЭШ</td>
 </tr>
 <!--проверка артикула-->
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//span[@class = &quot;sku&quot;]</td>
 	<td>*3419267</td>
 </tr>
 <!--Проверка наличия кнопки очистить корзину-->
 <tr>
-	<td>verifyElementPresent</td>
+	<td>assertElementPresent</td>
 	<td>//button[@class = &quot;gray small narrow clear doClearCart&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//button[@class = &quot;gray small narrow clear doClearCart&quot;]</td>
 	<td>Очистить корзину</td>
 </tr>
@@ -199,7 +199,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
+	<td>assertText</td>
 	<td>//div[@class = &quot;emptyCart&quot;]//p</td>
 	<td>Ваша корзина пуста*</td>
 </tr>
