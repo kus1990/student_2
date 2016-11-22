@@ -7,7 +7,8 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        LoginTest.class,
+        UlmartTest.class,
+        UlmartTest2.class
 
 })
 public class FeatureTestSuite {

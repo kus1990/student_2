@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class WinterSportPage extends AbstractPage{
     private static Logger log = Logger.getLogger(MainUlmartPage.class.getName());
 
-    @FindBy(xpath = "//span[text() = \"Горнолыжный спорт\"]//parent::a")
+    @FindBy(xpath = "html/body/div[1]/div/div/div/div[2]/div/div/section[1]/div/div[1]/ul/li[3]/a")////span[text() = "Горнолыжный спорт"]//parent::a
     private WebElement buttonSkiMount;
 
     public WinterSportPage(WebDriver driver){

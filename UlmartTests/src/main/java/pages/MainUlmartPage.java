@@ -13,7 +13,7 @@ public class MainUlmartPage extends AbstractPage {
 
     private static Logger log = Logger.getLogger(MainUlmartPage.class.getName());
 
-    @FindBy(xpath = "//span[text() = \"Спорт и Туризм\"]//parent::a")
+    @FindBy(xpath = ".//*[@id='b-dropdown-catalog-menu']/div/div/div/div/ul/li[20]/a")////span[text() = "Спорт и Туризм"]//parent::a
     private WebElement buttonSportAndTourism;
 
     @FindBy(xpath = "//input[@name = 'string']")

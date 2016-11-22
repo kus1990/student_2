@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class SportAndTourismPage extends AbstractPage{
     private static Logger log = Logger.getLogger(MainUlmartPage.class.getName());
 
-    @FindBy(xpath = "//span[text() = \"Зимний спорт\"]//parent::a[1]")
+    @FindBy(xpath = "//html/body/div[1]/div/div/div/div[2]/div/div/section[1]/div/div[1]/ul/li[15]/a") //span[text() = "Зимний спорт"]//parent::a[1]
     private WebElement buttonWinterSport;
 
     @FindBy(xpath = "//h1")

@@ -41,7 +41,7 @@
                     <configuration>
                         <testFailureIgnore>true</testFailureIgnore>
                         <includes>
-                            <include>**/LoginTest.java</include>
+                            <include>**/FeatureTestSuite.java</include>
 
                         </includes>
                     </configuration>
