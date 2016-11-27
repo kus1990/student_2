@@ -21,20 +21,29 @@ public class UlmartScenarioTest {
     }
 
     @Step("Переход в раздел Спорт и Туризм")
-    public String stepSportAndTourism(){
+    public void stepGoToSportAndTourism(){
         mainUlmartPage.pressButtonSportAndTourism();
+    }
+    @Step("Страница Спорт и Туризм открыта")
+    public String stepOpenSportAndTourismPage(){
         return sportAndTourismPage.checkHeader();
     }
 
     @Step("Переход в раздел Зимний спорт")
-    public boolean stepWinterSport(){
+    public void stepGoToWinterSport(){
         sportAndTourismPage.pressButtonWinterSport();
+    }
+    @Step("Страница Зимний спорт открыта")
+    public boolean stepOpenWinterSportPage(){
         return winterSportPage.checkButtonSkiMount();
     }
 
     @Step("Переход в раздел Горнолыжный спорт ")
-    public String stepSkiMount(){
+    public void stepGoToSkiMountPage(){
         winterSportPage.pressButtonSkiMount();
+    }
+    @Step("Страница Горнолыжный спорт открыта")
+    public String stepOpenSkiMountPage(){
         return skiMountPage.checkHeader();
     }
 
