@@ -5,6 +5,7 @@ import helpers.PropertyLoader;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import steps.UlmartScenarioTest;
@@ -33,6 +34,7 @@ public class BaseTest {
         String baseUrl = PropertyLoader.loadProperty("stageURL");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.get(baseUrl);
+        Assert.assertTrue(driver.getCurrentUrl().contains("ulmart"));
     }
 
     @After
