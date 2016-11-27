@@ -28,8 +28,8 @@ public class BaseTest {
     @Before
     public void setUp() throws Exception {
         //driver = BrowserManager.getWebDriver();
-        String workingDir = System.getProperty("user.dir");
-        System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
+        //String workingDir = System.getProperty("user.dir");
+        //System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
         String baseUrl = PropertyLoader.loadProperty("stageURL");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.get(baseUrl);
