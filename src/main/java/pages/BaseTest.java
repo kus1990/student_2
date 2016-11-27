@@ -17,17 +17,17 @@ import static org.junit.Assert.fail;
  * Created by Мастер on 26.11.2016.
  */
 public class BaseTest {
-
+    WebDriver driver;
 
     @Steps
     protected UlmartScenarioTest ulmartScenarioTest;
 
-    @Managed(driver = "firefox")
-    WebDriver driver;
+    //@Managed(driver = "firefox")
+   // WebDriver driver;
 
     @Before
     public void setUp() throws Exception {
-        //driver = BrowserManager.getWebDriver();
+        driver = BrowserManager.getWebDriver();
         String workingDir = System.getProperty("user.dir");
         //System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
         String baseUrl = PropertyLoader.loadProperty("stageURL");
