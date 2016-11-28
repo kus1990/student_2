@@ -1,25 +1,47 @@
 package steps;
 
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
+import org.jbehave.core.annotations.BeforeStories;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
 
 /**
  * Created by Мастер on 26.11.2016.
  */
+@RunWith(SerenityRunner.class)
 public class UlmartSteps {
+    @Managed(driver = "firefox")
+    WebDriver driver;
+
     @Steps
     UlmartScenarioTest ulmartScenarioTest;
 
+    @BeforeStories
+    public void startBrowser(){
+
+        String workingDir = System.getProperty("user.dir");
+        System.out.println("eewewe"+System.getenv().toString());
+        if(System.getenv().get("OS").contains("Windows")) {
+            System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
+        } else {
+            System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriverlinux");
+        }
+
+    }
+
     @Given("Открытие главной страницы")
     public void openMainUlmartPage(){
-        String workingDir = System.getProperty("user.dir");
-        System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
         String baseUrl = "https://www.ulmart.ru";
-        ThucydidesWebDriverSupport.getDriver().get(baseUrl);
+        driver.get(baseUrl);
+        driver.navigate().refresh();
     }
     @Then("Главная страница открыта")
     public void openUlmartMainPage(){
@@ -39,6 +61,7 @@ public class UlmartSteps {
     public void goToWinterSportPage(){
         ulmartScenarioTest.stepGoToWinterSport();
     }
+
     @Then("Страница Зимний спорт открыта")
     public void openWinterSportPage(){
         boolean winterSport = ulmartScenarioTest.stepOpenWinterSportPage();
@@ -63,5 +86,11 @@ public class UlmartSteps {
         boolean nameOfGoods = ulmartScenarioTest.stepCheckNameOfGoods("Горные лыжи");
         Assert.assertTrue("Имя товара не совпадает с заданным", nameOfGoods);
     }
+
+    @After
+    public void tearDown() throws Exception {
+        ThucydidesWebDriverSupport.getDriver().quit();
+    }
+
 
 }

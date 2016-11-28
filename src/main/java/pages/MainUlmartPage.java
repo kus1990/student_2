@@ -26,7 +26,7 @@ public class MainUlmartPage extends PageObject {
     }
 
     public boolean verifySearchField(){
-        return searchField.isEnabled();
+        return searchField.isDisplayed();
 /*            log.info("Строка поиска отображается на странце");
         } else {
             log.info("Строка поиска не отображается на странце");
