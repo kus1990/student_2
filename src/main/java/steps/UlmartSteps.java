@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
+import org.apache.commons.lang.SystemUtils;
 import org.jbehave.core.annotations.BeforeStories;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
@@ -29,7 +30,7 @@ public class UlmartSteps {
 
         String workingDir = System.getProperty("user.dir");
         System.out.println("eewewe"+System.getenv().toString());
-        if(System.getenv().get("OS").contains("Windows")) {
+        if(SystemUtils.IS_OS_WINDOWS) {
             System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
         } else {
             System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriverlinux");
