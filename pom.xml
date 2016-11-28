@@ -8,6 +8,10 @@
     <artifactId>UlmartTests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
     <dependencies>
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
@@ -54,8 +58,9 @@
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.driver>firefox</webdriver.driver>
-                    </systemPropertyVariables>
-                </configuration>
+                        <webdriver.firefox.bin>usr/bin/firefox</webdriver.firefox.bin>
+                        </systemPropertyVariables>
+                    </configuration>
                 <executions>
                     <execution>
                         <goals>
