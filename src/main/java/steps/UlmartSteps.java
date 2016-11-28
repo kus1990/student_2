@@ -28,12 +28,12 @@ public class UlmartSteps {
     @BeforeStories
     public void startBrowser(){
 
-        String workingDir = System.getProperty("user.dir");
+        //String workingDir = System.getProperty("user.dir");
         System.out.println("eewewe"+System.getenv().toString());
         if(SystemUtils.IS_OS_WINDOWS) {
-            System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriver.exe");
+            System.setProperty("webdriver.firefox.marionette", ".\\drivers\\geckodriver.exe");
         } else {
-            System.setProperty("webdriver.firefox.marionette", workingDir + "\\drivers\\geckodriverlinux");
+            System.setProperty("webdriver.firefox.marionette", "./drivers/geckodriverlinux");
         }
 
     }
