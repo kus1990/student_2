@@ -13,11 +13,12 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by Мастер on 26.11.2016.
  */
-@RunWith(SerenityRunner.class)
+//@RunWith(SerenityRunner.class)
 public class UlmartSteps {
     @Managed(driver = "firefox")
     WebDriver driver;
@@ -28,8 +29,6 @@ public class UlmartSteps {
     @BeforeStories
     public void startBrowser(){
 
-        //String workingDir = System.getProperty("user.dir");
-        System.out.println("eewewe"+System.getenv().toString());
         if(SystemUtils.IS_OS_WINDOWS) {
             System.setProperty("webdriver.firefox.marionette", ".\\drivers\\geckodriver.exe");
         } else {
@@ -40,9 +39,13 @@ public class UlmartSteps {
 
     @Given("Открытие главной страницы")
     public void openMainUlmartPage(){
-        String baseUrl = "https://www.ulmart.ru";
-        driver.get(baseUrl);
-        driver.navigate().refresh();
+        try {
+            String baseUrl = "https://www.ulmart.ru";
+            ThucydidesWebDriverSupport.getDriver().get(baseUrl);
+            ThucydidesWebDriverSupport.getDriver().navigate().refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @Then("Главная страница открыта")
     public void openUlmartMainPage(){

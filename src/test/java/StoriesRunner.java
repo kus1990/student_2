@@ -10,9 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class StoriesRunner extends SerenityStories{
-    public static net.thucydides.core.webdriver.Configuration getConfiguration() {
+    /*public static net.thucydides.core.webdriver.Configuration getConfiguration() {
         return Injectors.getInjector().getInstance(net.thucydides.core.webdriver.Configuration.class);
-    }
+    }*/
 
     @Override
     public List<String> storyPaths() {
